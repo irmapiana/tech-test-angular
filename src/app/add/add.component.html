@@ -1,0 +1,97 @@
+<div class="container mt-5 full-width">
+    <legend>Add Employee</legend>
+    <form
+        [formGroup]="employeeForm"
+        (ngSubmit)="submitForm()"
+    >
+      <div class="mt-5">
+        <mat-form-field appearance="fill" class="username">
+            <mat-label>User Name</mat-label>
+              <input 
+                  matInput
+                  type="text"
+                  formControlName="username"
+                  id="username" />  
+        </mat-form-field>
+      </div>
+        <mat-form-field appearance="fill" class="firstName">
+            <mat-label>First Name</mat-label>
+            <input 
+                matInput
+                type="text"
+                formControlName="firstName"
+                id="firstName" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="lastName">
+            <mat-label>Last Name</mat-label>
+            <input 
+                matInput
+                type="text"
+                formControlName="lastName"
+                id="lastName" />
+        </mat-form-field>
+      <div>
+         <mat-form-field appearance="fill" class="email">
+            <mat-label>Email</mat-label>
+            <input 
+                matInput
+                type="email"
+                formControlName="email"
+                id="email" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="birthDate">
+            <mat-label>Birthdate</mat-label>
+            <input
+                matInput
+                readonly
+                [matDatepicker]="picker"
+                formControlName="birthDate"
+                (dateChange)="formatDate('change', $event)"
+                [max]="tomorrow"
+            />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+          <mat-form-field appearance="fill" class="basicSalary">
+            <mat-label>Basic Salary</mat-label>
+                <input 
+                    matInput
+                    type="number"
+                    formControlName="basicSalary"
+                    id="basicSalary" />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="status">
+            <mat-label>Status</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let status of status" [value]="status.value">
+                  {{status.value}}
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+            <mat-form-field appearance="fill" class="group">
+              <mat-label>Group</mat-label>
+              <mat-select>
+                <input placeholder="Search..." matInput type="text" (change)="onKey($any($event.target).value)" class="input-group">
+                <mat-option *ngFor="let group of selectedGroup" [value]="group.value">{{group.value}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+      </div>
+      <div>
+            <mat-form-field appearance="fill" class="description">
+                <mat-label>Description</mat-label>
+                <input 
+                    matInput
+                    type="text"
+                    formControlName="description"
+                    id="txtName" />
+            </mat-form-field>
+      </div>
+      <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+      <button type="button" onclick="history.back()" class="btn btn-warning mx-1">Cancel</button>
+    </form>
+  </div>

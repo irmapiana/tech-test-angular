@@ -1,0 +1,51 @@
+.username {
+    margin-top: 3rem;
+    width: 70%;
+}
+
+.firstName {
+
+    width:35%
+}
+
+.lastName {
+    width: 35%;
+    padding-left: 5px;
+}
+
+.email {
+    width: 40%;
+}
+
+.birthDate {
+    width: 30%;
+    padding-left: 5px;
+}
+
+.basicSalary {
+    width: 22%;
+}
+
+.status {
+    width: 18%;
+    padding: 5px;
+}
+
+.group {
+    width: 30%;
+}
+
+.input-group {
+    height: 50px;
+}
+
+.description {
+    width: 70%;
+}
+
+@media (min-width: 100%) {
+    .firstName {
+        display: flex;
+        max-width: 100%;
+    }
+}

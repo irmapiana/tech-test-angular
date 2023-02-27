@@ -1,0 +1,50 @@
+<div class="container">
+    <h1 class="title">Detail Employee</h1>
+    <div class="flex">
+        <P><strong>Username:</strong>
+            {{ employee.username }}</P>
+    </div>
+   
+    <div class="flex">
+        <P><strong>First Name:</strong>
+            {{ employee.firstName }}</P>
+    </div>
+   
+    <div class="flex">
+        <P><strong>Last Name:</strong>
+            {{ employee.lastName }}</P>
+    </div>
+
+    <div class="flex">
+        <p><strong>Email:</strong>
+            {{ employee.email }}</p>
+    </div>
+
+    <div class="flex">
+        <P><strong>Birth Date:</strong>
+            {{ employee.birthDate }}</P>
+    </div>
+
+    <div class="flex">
+        <p><strong>Status:</strong>
+            {{ employee.status }}
+    </div>
+
+    <div class="flex">
+        <p><strong>Basic Salary:</strong>
+            Rp.{{ employee.basicSalary | number:'1.0-0'}},00</p>
+    </div>
+
+    <div class="flex">
+        <p><strong>Group:</strong>
+            {{ employee.group }}</p>
+    </div>
+
+    <div class="flex">
+        <p><strong>Description:</strong>
+            {{ employee.description }}</p>
+    </div>
+    <div class="absolute top-0 right-0 h-16 w-16">
+        <button onclick="history.back()" class="btn btn-warning">back</button>
+    </div>
+</div>
